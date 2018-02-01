@@ -56,6 +56,10 @@ function draw(){
                if(key=="8")
                zania_filter(index, r,g,b,a,row,col);
            }
+           if(keyIsPressed){
+               if(key=="9")
+               zero(index, r,g,b,a);
+           }
         }
     }
 
@@ -115,6 +119,13 @@ function rgb(index, r,g,b,a){
 function zania_filter(index,r,g,b,a,row,col){
     pixels[index] = r + row - 190; //red
     pixels[index + 1] = g + col -190; //green
+    pixels[index + 2] = b; //blue
+    pixels[index + 3] = a; //alpha
+}
+
+function zero(index, r,g,b,a){
+    pixels[index] = 0; //red
+    pixels[index + 1] = g; //green
     pixels[index + 2] = b; //blue
     pixels[index + 3] = a; //alpha
 }
